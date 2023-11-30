@@ -147,67 +147,6 @@ class FirstPage extends StatelessWidget {
                   ),
                 ),
               ),
-              //page 2
-              // TextField(
-              //   controller: controller_2,
-              //   decoration: InputDecoration(
-              //       labelText: 'Ведите значение',
-              //       labelStyle: TextStyle(
-              //         color: Colors.black,
-              //         fontSize: 20,
-              //       )),
-              // ),
-              // MaterialButton(
-              //   color: Colors.green,
-              //   onPressed: () {
-              //     if (controller_2.text != "") {
-              //       Navigator.push(context,
-              //           MaterialPageRoute(builder: (context) {
-              //         return Page_1(title: pages[1], search: controller_1.text);
-              //       }));
-              //     }
-              //   },
-              //   child: Padding(
-              //     padding: EdgeInsets.all(20),
-              //     child: Text(
-              //       pages[1],
-              //       style: TextStyle(
-              //         color: Colors.white,
-              //       ),
-              //     ),
-              //   ),
-              // ),
-
-              //page 3
-              // TextField(
-              //   controller: controller_3,
-              //   decoration: InputDecoration(
-              //       labelText: 'Ведите значение',
-              //       labelStyle: TextStyle(
-              //         color: Colors.black,
-              //         fontSize: 20,
-              //       )),
-              // ),
-              // MaterialButton(
-              //   color: Colors.green,
-              //   onPressed: () {
-              //     if (controller_3.text != "") {
-              //       Navigator.push(context,
-              //           MaterialPageRoute(builder: (context) {
-              //         return Page_3(title: pages[2], search: controller_1.text);
-              //       }));
-              //     }
-              //   },
-              //   child: Padding(
-              //     padding: EdgeInsets.all(20),
-              //     child: Text(
-              //       pages[2],
-              //       style: TextStyle(
-              //         color: Colors.white,
-              //       ),
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),
@@ -332,40 +271,6 @@ Future<Album> fetchAlbum(String s) async {
   }
 }
 
-// class ToDoTile extends StatefulWidget {
-//   final int user;
-//   final int id;
-//   final String tx;
-
-//   ToDoTile({
-//     super.key,
-//     required this.user,
-//     required this.id,
-//     required this.tx,
-//   });
-//   @override
-//   createState() => new ToDoTileState();
-// }
-
-// class ToDoTileState extends State<ToDoTile> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       decoration: BoxDecoration(
-//         color: Colors.orange,
-//       ),
-//       child: Row(
-//         children: [
-//           // checkbox
-//           Text(widget.user.toString()),
-//           Text(widget.id.toString()),
-//           Text(widget.tx),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 class Page_2 extends StatefulWidget {
   Page_2({super.key});
   Map<String, dynamic> list = {};
@@ -408,7 +313,16 @@ class _PageState2 extends State<Page_2> {
             if (snapshot.hasData) {
               return Column(
                 children: <Widget>[
-                  Text("fact: " + snapshot.data!.fact),
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                  ),
+                  Text(
+                    "fact: " + snapshot.data!.fact,
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                  ),
                   Text("length: " + snapshot.data!.length.toString()),
                 ],
               );
